@@ -5,9 +5,6 @@
 # 
 # ## 1. importar las librerías + csv con los datos de la encuesta. 
 
-# In[1]:
-
-
 # importar librerias
 
 import pandas as pd
@@ -23,26 +20,15 @@ df_csv #mostrar df ()
 # ## 2. Preprocesar datos.
 # 
 # Tratar las columnas/conjunto de datos para comenzar a crear los gráficos. En este caso Age1stcode
-
-# In[2]:
-
-
 df_csv['Age1stCode'].value_counts() 
 
 
 # Para lidiar con rangos de edades, algunos de los cuales tienen texto, se va a calcular una nueva columna con la media de todos ellos. 
-# 
-
-# In[3]:
-
-
 #se hace una copia del df.
 df= df_csv.copy()
 
 #normalizar todos los datos.
-
 df = df[df['Age1stCode'].notna()] #eliminar los nulos
-
 
 df.loc[df["Age1stCode"] == "Younger than 5 years", "Age1stCode"] = "04 - 04 years" #ya hay un 05 anyos en el df. 
 df.loc[df["Age1stCode"] == "Older than 64 years", "Age1stCode"] = "65 - 65 years"
@@ -56,12 +42,7 @@ df['max'] = df.Age1stCode.astype(str).str[5:7].astype(int) # el maximo es el seg
 df['media'] = df[['min', 'max']].mean(axis=1)
 
 
-# ## 3. Grafico. 
-# 
-# En este caso, un diagrama de barras.
-
-# In[4]:
-
+# ## 3. Grafico. En este caso, un diagrama de barras.
 
 app = Dash(__name__)
 server = app.server #heroku
@@ -83,10 +64,6 @@ app.layout = html.Div([
 
 ])
 
-
-# In[5]:
-
-
 @app.callback(
     Output(component_id='my_survey', component_property='figure'),
     Input(component_id='select_opt', component_property='value'))
@@ -105,14 +82,6 @@ def update_graph(option_slctd):
 
 # ## 4. run server
 
-# In[6]:
-
-if __name__ == '__main__':
+if __name__ == '__main__': #anyadir esta opcion para hacer el deploy
     app.run_server(debug=True, use_reloader=False)
-
-
-# In[ ]:
-
-
-
 
