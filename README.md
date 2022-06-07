@@ -18,9 +18,9 @@ Se puede obtener más información sobre lo que contienen las demás carpetas le
 # Comenzando.
 Para poder poner en funcionamiento una copia del proyecto se van a necesitar:
 
-* [Python 3.10](https://www.python.org/downloads/windows/) (o [Anaconda](https://www.anaconda.com/)).
+* [Python 3.10](https://www.python.org/downloads/windows/) y un IDE a elección (se recomienda [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows).) o [Anaconda](https://www.anaconda.com/).
 
-Si se elige Python, se necesitarán las librerías pandas, plotly, dash, dash-bootstrap-components y numpy. Para ello se deben ejecutar los siguientes comandos:
+Si se elige Python se necesitará, además de un IDE, las librerías: pandas, plotly, dash, dash-bootstrap-components y numpy. Para ello se deben ejecutar los siguientes comandos:
 
 		- pip install pandas
 		- pip install plotly
