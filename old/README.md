@@ -1,6 +1,12 @@
-# GII_O_MA_21.05
-Dashboard de visualización del uso y preferencias de los desarrolladores basado en las encuestas anuales de Stack Overflow.
+<h1>
+  Carpeta Old
+</h1>
 
-## Instalación de herramientas
+**Esta carpeta está incluida en gitignore.**
+# Estructura
 
-pip install dash
+  * `definitivo` notebooks cuyo código ha sido incluido de alguna forma en el dashboard final.
+
+  * `versiones` listado dashboards en diferentes procesos de desarrollo. Todos son versiones antiguas. 
+
+  * En `no definitivo` están el resto. (código que no ha sido incluido en el dashboard final)
