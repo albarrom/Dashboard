@@ -1,7 +1,9 @@
 <h1 align="center">
-	[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c76950ce941e42c783f68748c6d639cf)](https://www.codacy.com/gh/albarrom/GII_O_MA_21.05/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=albarrom/GII_O_MA_21.05&amp;utm_campaign=Badge_Grade)
-  Dashboard de visualización del uso y preferencias de los desarrolladores basado en las encuestas anuales de Stack Overflow
+	Dashboard de visualización del uso y preferencias de los desarrolladores basado en las encuestas anuales de Stack Overflow
+	<a href="https://www.codacy.com/gh/albarrom/GII_O_MA_21.05/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=albarrom/GII_O_MA_21.05&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/c76950ce941e42c783f68748c6d639cf"/></a>
 </h1>
+
+
 
 # Descripción
 
