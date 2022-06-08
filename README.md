@@ -4,6 +4,8 @@
 
 # Descripción.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3004a6bd02c24f79abbc169819d0c095)](https://app.codacy.com/gh/albarrom/GII_O_MA_21.05?utm_source=github.com&utm_medium=referral&utm_content=albarrom/GII_O_MA_21.05&utm_campaign=Badge_Grade_Settings)
+
 Esta aplicación ha sido creada para procesar datos recogidos de las [encuestas anuales de Stackoverflow](https://insights.stackoverflow.com/survey?_ga=2.189292843.1285052511.1645528337-438523718.1645528337) y mostrarlos al usuario en forma accesible con gráficos interactivos.
 
 # Lo básico. 
