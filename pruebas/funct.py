@@ -8,38 +8,81 @@ from re import search
 from pandas.errors import EmptyDataError
 
 
+
+
 def existe(directorio):
+    """
+    funcion que comprueba si directorio existe
+    :param directorio: directorio del archivo que se quiere comprobar
+    :return: True si existe, False si no.
+    """
     try:
-        open(directorio,"r")
-    except FileNotFoundError:
-        return('file not found') # se ha introducido un fichero que no existe
-    return True
+        if os.path.isfile(directorio): return True
+        else: return False
+    except BaseException:
+        return False
+
 
 def vacio (directorio):
-    return os.stat(directorio).st_size==0
+    """
+    Funcion que comprueba si directorio esta vacio.
+    :param directorio: directorio del archivo que se quiere comprobar
+    :return: True si existe, False si no.
+    """
+    try:
+        if os.stat(directorio).st_size==0: return True
+        else: return False
+    except BaseException:
+        return False
+
 
 def encoding_csv(directorio):
-    return CnM.from_path(directorio).best().first().encoding
+    """
+    Funcion que devuelve el tipo de encoding de directorio
+    :param directorio: directorio del archivo que se quiere comprobar
+    :return:
+    """
+    try:
+        return CnM.from_path(directorio).best().first().encoding
+    except BaseException as e:
+        return str(e)
 
 def extension(directorio):
+    """
+    Funcion que devuelve los ultimos 4 caracteres de directorio
+    :param directorio: directorio del archivo que se quiere comprobar
+    :return: ultimos 4 caracteres del archivo
+    """
     return directorio[-4:]
 
 
 def funcion_pandas(directorio):
+    """
+    Funcion que devuelve las columnas de directorio
+    :param directorio: directorio del archivo que se quiere comprobar
+    :return: columnas del dataframe o un mensaje de error
+    """
     try:
         posible_fichero_ok= pd.read_csv(directorio)
         return posible_fichero_ok.columns
     except BaseException as error:
-        return format(error)
+        return str(error)
 
-def archivos_apropiados(directorio):
+
+def columnas_no_nulas(directorio, pred):
+
     try:
         f = pd.read_csv(directorio)
-        #columnas nulas
-        return f.columns[(f.isnull().sum()/len(f)) ==1].tolist()
-
+        # si pred es subset de las columnas y ninguna de esas columnas es nula
+        if set(pred).issubset(f.columns) and f[pred].notna().any().all():
+            return True
+        else:
+            return False
     except BaseException as error:
-        return format(error)
+        return False
+
+
+
 
 
 
