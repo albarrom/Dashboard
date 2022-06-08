@@ -1,7 +1,6 @@
 
 import unittest
 
-import numpy as np
 
 from funct import *
 
@@ -87,9 +86,10 @@ class TestCsv(unittest.TestCase):
         self.assertEqual(encoding_csv(dos_filas_cabecera_csv), prediccion)
         self.assertEqual(encoding_csv(dos_filas_cabecera_txt), prediccion)
         self.assertEqual(encoding_csv(dos_filas_no_cabecera_csv), prediccion)
-        self.assertEqual(encoding_csv(vacio_csv), prediccion)
-        self.assertEqual(encoding_csv(vacio_txt), prediccion)
-        self.assertEqual(encoding_csv(vacio_txt), prediccion)
+
+        self.assertEqual(encoding_csv(vacio_csv), "archivo demasiado pequenyo")
+        self.assertEqual(encoding_csv(vacio_txt), "archivo demasiado pequenyo")
+        self.assertEqual(encoding_csv(vacio_txt), "archivo demasiado pequenyo")
 
         self.assertNotEqual(encoding_csv("no_existe"), prediccion, "error de formato")
         self.assertNotEqual(encoding_csv(no_vacio_txt), prediccion, "error de formato")
@@ -121,56 +121,7 @@ class TestCsv(unittest.TestCase):
         self.assertEqual(extension(df20), ".csv")
         self.assertEqual(extension(df21), ".csv")
 
-    def test_funcion_pandas(self):
-        """
-        test: columnas de dataframe coinciden con la prediccion.
-        :return:
-        """
-        dos_filas_cabecera_csv = ("data/dos_filas_cabecera.csv")
-        dos_filas_cabecera_txt = ("data/dos_filas_cabecera.txt")
-        dos_filas_no_cabecera_csv = ("data/dos_filas_no_cabecera.csv")
-        df21 = ("data/survey_results_public2021.csv")
-        df20 = ("data/survey_results_public2020.csv")
-        no_vacio_txt = ("data/no_vacio.txt")
-        unicode21_txt = ("data/unicode21.txt")
-        vacio_csv = ("data/vacio.csv")
-        vacio_txt = ("data/vacio.txt")
 
-        #columnas que se usan en el dataframe (2021)
-        pred21 = ["MainBranch", "Country", "US_State", "EdLevel", "Age", "Employment",
-                   "Age1stCode", "LearnCode", "YearsCode", "YearsCodePro", "DevType", "OpSys", "NEWStuck",
-                   "ConvertedCompYearly", "LanguageHaveWorkedWith", "LanguageWantToWorkWith",
-                   "DatabaseHaveWorkedWith", "DatabaseWantToWorkWith", "PlatformHaveWorkedWith",
-                   "PlatformWantToWorkWith", "WebframeHaveWorkedWith", "WebframeWantToWorkWith",
-                   "MiscTechHaveWorkedWith", "MiscTechWantToWorkWith", "ToolsTechHaveWorkedWith",
-                   "ToolsTechWantToWorkWith", 'NEWCollabToolsHaveWorkedWith', 'NEWCollabToolsWantToWorkWith',
-                   "ConvertedCompYearly", "OrgSize"]
-
-        # columnas que se usan en el dataframe (2020)
-        pred20 = ["MainBranch", "Age", "Age1stCode", "ConvertedComp", "Country", "DevType","EdLevel", "NEWLearn",
-                  "NEWStuck", "OpSys", "YearsCode", "YearsCodePro", "LanguageWorkedWith"]
-
-        #comprueba que todo pred21/pred20 este incluido en los nombres de las columnas de los archivos
-        self.assertFalse(set(funcion_pandas(dos_filas_cabecera_txt)).issuperset(set(pred21)))
-        self.assertFalse(set(funcion_pandas(dos_filas_no_cabecera_csv)).issuperset(set(pred21)))
-        self.assertFalse(set(funcion_pandas(df20)).issuperset(set(pred21)))
-        self.assertFalse(set(funcion_pandas(no_vacio_txt)).issuperset(set(pred21)))
-        self.assertFalse(set(funcion_pandas(unicode21_txt)).issuperset(set(pred21)))
-        self.assertFalse(set(funcion_pandas(vacio_csv)).issuperset(set(pred21)))
-        self.assertFalse(set(funcion_pandas(vacio_txt)).issuperset(set(pred21)))
-
-        self.assertFalse(set(funcion_pandas(dos_filas_cabecera_csv)).issuperset(set(pred20)))
-        self.assertFalse(set(funcion_pandas(dos_filas_cabecera_txt)).issuperset(set(pred20)))
-        self.assertFalse(set(funcion_pandas(dos_filas_no_cabecera_csv)).issuperset(set(pred20)))
-        self.assertFalse(set(funcion_pandas(df21)).issuperset(set(pred20)))
-        self.assertFalse(set(funcion_pandas(no_vacio_txt)).issuperset(set(pred20)))
-        self.assertFalse(set(funcion_pandas(unicode21_txt)).issuperset(set(pred20)))
-        self.assertFalse(set(funcion_pandas(vacio_csv)).issuperset(set(pred20)))
-        self.assertFalse(set(funcion_pandas(vacio_txt)).issuperset(set(pred20)))
-
-        self.assertTrue(set(funcion_pandas(dos_filas_cabecera_csv)).issuperset(set(pred21)))
-        self.assertTrue(set(funcion_pandas(df21)).issuperset(set(pred21)))
-        self.assertTrue(set(funcion_pandas(df20)).issuperset(set(pred20)))
 
     def test_columnas_no_nulas(self):
         dos_filas_cabecera_csv = ("data/dos_filas_cabecera.csv")
