@@ -1,12 +1,8 @@
-<h1>
-  Carpeta Old
-</h1>
+# Carpeta Old
 
 **Esta carpeta está incluida en gitignore.**
-# Estructura
+## Estructura
 
-  * `definitivo` notebooks cuyo código ha sido incluido de alguna forma en el dashboard final.
-
-  * `versiones` listado dashboards en diferentes procesos de desarrollo. Todos son versiones antiguas. 
-
-  * En `no definitivo` están el resto. (código que no ha sido incluido en el dashboard final)
+*  `definitivo` notebooks cuyo código ha sido incluido de alguna forma en el dashboard final.
+*  `versiones` listado dashboards en diferentes procesos de desarrollo. Todos son versiones antiguas. 
+*  En `no definitivo` están el resto. (código que no ha sido incluido en el dashboard final)

@@ -2,6 +2,7 @@
 #Alba Bartolome
 
 import unittest
+
 from funct import *
 
 class TestCsv(unittest.TestCase):
