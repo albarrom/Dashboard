@@ -1,36 +1,25 @@
+# tests
+#Alba Bartolome
 
 import unittest
-
-
 from funct import *
 
 class TestCsv(unittest.TestCase):
-
-
 
     def test_existe(self):
         """
         test: comprobar que el directorio del fichero existe
         """
-        dos_filas_cabecera_csv = ("data/dos_filas_cabecera.csv")
-        dos_filas_cabecera_txt = ("data/dos_filas_cabecera.txt")
-        dos_filas_no_cabecera_csv = ("data/dos_filas_no_cabecera.csv")
-        df21 = ("data/survey_results_public2021.csv")
-        df20 = ("data/survey_results_public2020.csv")
-        no_vacio_txt = ("data/no_vacio.txt")
-        unicode21_txt = ("data/unicode21.txt")
-        vacio_csv = ("data/vacio.csv")
-        vacio_txt = ("data/vacio.txt")
 
-        self.assertTrue(existe(dos_filas_cabecera_csv))
-        self.assertTrue(existe(dos_filas_cabecera_txt))
-        self.assertTrue(existe(dos_filas_no_cabecera_csv))
-        self.assertTrue(existe(df20))
-        self.assertTrue(existe(df21))
-        self.assertTrue(existe(no_vacio_txt))
-        self.assertTrue(existe(unicode21_txt))
-        self.assertTrue(existe(vacio_csv))
-        self.assertTrue(existe(vacio_txt))
+        self.assertTrue(existe("data/dos_filas_cabecera.csv"))
+        self.assertTrue(existe("data/dos_filas_cabecera.txt"))
+        self.assertTrue(existe("data/dos_filas_no_cabecera.csv"))
+        self.assertTrue(existe("data/survey_results_public2020.csv"))
+        self.assertTrue(existe("data/survey_results_public2021.csv"))
+        self.assertTrue(existe("data/no_vacio.txt"))
+        self.assertTrue(existe("data/unicode21.txt"))
+        self.assertTrue(existe("data/vacio.csv"))
+        self.assertTrue(existe("data/vacio.txt"))
 
         self.assertFalse(existe("/data/este_fichero_no_existe"))
         self.assertFalse(existe("/data/ni_este.txt"))
@@ -42,98 +31,59 @@ class TestCsv(unittest.TestCase):
         """
         test: fichero no vacio
         """
-        dos_filas_cabecera_csv = ("data/dos_filas_cabecera.csv")
-        dos_filas_cabecera_txt = ("data/dos_filas_cabecera.txt")
-        dos_filas_no_cabecera_csv = ("data/dos_filas_no_cabecera.csv")
-        df21 = ("data/survey_results_public2021.csv")
-        df20 = ("data/survey_results_public2020.csv")
-        no_vacio_txt = ("data/no_vacio.txt")
-        unicode21_txt = ("data/unicode21.txt")
-        vacio_csv = ("data/vacio.csv")
-        vacio_txt = ("data/vacio.txt")
-
-
-        self.assertFalse(vacio(dos_filas_cabecera_csv))
-        self.assertFalse(vacio(dos_filas_cabecera_txt))
-        self.assertFalse(vacio(dos_filas_no_cabecera_csv))
-        self.assertFalse(vacio(df20))
-        self.assertFalse(vacio(df21))
-        self.assertFalse(vacio(no_vacio_txt))
-        self.assertFalse(vacio(unicode21_txt))
+        
+        self.assertFalse(vacio("data/dos_filas_cabecera.csv"))
+        self.assertFalse(vacio("data/dos_filas_cabecera.txt"))
+        self.assertFalse(vacio("data/dos_filas_no_cabecera.csv"))
+        self.assertFalse(vacio("data/survey_results_public2020.csv"))
+        self.assertFalse(vacio("data/survey_results_public2021.csv"))
+        self.assertFalse(vacio("data/no_vacio.txt"))
+        self.assertFalse(vacio("data/unicode21.txt"))
         self.assertFalse(vacio("/data/este_fichero_no_existe"))
 
-        self.assertTrue(vacio(vacio_csv))
-        self.assertTrue(vacio(vacio_txt))
+        self.assertTrue(vacio("data/vacio.csv"))
+        self.assertTrue(vacio("data/vacio.txt"))
 
     def test_encoding_csv(self):
         """
         test: codificacion del fichero
         """
-        dos_filas_cabecera_csv = ("data/dos_filas_cabecera.csv")
-        dos_filas_cabecera_txt = ("data/dos_filas_cabecera.txt")
-        dos_filas_no_cabecera_csv = ("data/dos_filas_no_cabecera.csv")
-        df21 = ("data/survey_results_public2021.csv")
-        df20 = ("data/survey_results_public2020.csv")
-        no_vacio_txt = ("data/no_vacio.txt")
-        unicode21_txt = ("data/unicode21.txt")
-        vacio_csv = ("data/vacio.csv")
-        vacio_txt = ("data/vacio.txt")
-
+        
         prediccion= 'utf_8'
 
-        self.assertEqual(encoding_csv(df20), prediccion)
-        self.assertEqual(encoding_csv(df21), prediccion)
-        self.assertEqual(encoding_csv(dos_filas_cabecera_csv), prediccion)
-        self.assertEqual(encoding_csv(dos_filas_cabecera_txt), prediccion)
-        self.assertEqual(encoding_csv(dos_filas_no_cabecera_csv), prediccion)
+        self.assertEqual(encoding_csv("data/survey_results_public2020.csv"), prediccion)
+        self.assertEqual(encoding_csv("data/survey_results_public2021.csv"), prediccion)
+        self.assertEqual(encoding_csv("data/dos_filas_cabecera.csv"), prediccion)
+        self.assertEqual(encoding_csv("data/dos_filas_cabecera.txt"), prediccion)
+        self.assertEqual(encoding_csv("data/dos_filas_no_cabecera.csv"), prediccion)
 
-        self.assertEqual(encoding_csv(vacio_csv), "archivo demasiado pequenyo")
-        self.assertEqual(encoding_csv(vacio_txt), "archivo demasiado pequenyo")
-        self.assertEqual(encoding_csv(vacio_txt), "archivo demasiado pequenyo")
+        self.assertEqual(encoding_csv("data/vacio.csv"), "archivo demasiado pequenyo")
+        self.assertEqual(encoding_csv("data/vacio.txt"), "archivo demasiado pequenyo")
+        self.assertEqual(encoding_csv("data/vacio.txt"), "archivo demasiado pequenyo")
 
         self.assertNotEqual(encoding_csv("no_existe"), prediccion, "error de formato")
-        self.assertNotEqual(encoding_csv(no_vacio_txt), prediccion, "error de formato")
-        self.assertNotEqual(encoding_csv(unicode21_txt), prediccion, "error de formato")
+        self.assertNotEqual(encoding_csv("data/no_vacio.txt"), prediccion, "error de formato")
+        self.assertNotEqual(encoding_csv("data/unicode21.txt"), prediccion, "error de formato")
 
     def test_extension(self):
         """
         test: extension del fichero.
         """
 
-        dos_filas_cabecera_csv = ("data/dos_filas_cabecera.csv")
-        dos_filas_cabecera_txt = ("data/dos_filas_cabecera.txt")
-        dos_filas_no_cabecera_csv = ("data/dos_filas_no_cabecera.csv")
-        df21 = ("data/survey_results_public2021.csv")
-        df20 = ("data/survey_results_public2020.csv")
-        no_vacio_txt = ("data/no_vacio.txt")
-        unicode21_txt = ("data/unicode21.txt")
-        vacio_csv = ("data/vacio.csv")
-        vacio_txt = ("data/vacio.txt")
-
-
-        self.assertEqual(extension(dos_filas_cabecera_csv), ".csv")
-        self.assertEqual(extension(dos_filas_cabecera_txt), ".txt", "error de formato")
-        self.assertEqual(extension(dos_filas_no_cabecera_csv), ".csv")
-        self.assertEqual(extension(no_vacio_txt), ".txt", "error de formato")
-        self.assertEqual(extension(vacio_txt), ".txt", "error de formato")
-        self.assertEqual(extension(unicode21_txt), ".txt", "error de formato")
-        self.assertEqual(extension(vacio_csv), ".csv")
-        self.assertEqual(extension(df20), ".csv")
-        self.assertEqual(extension(df21), ".csv")
+        self.assertEqual(extension("data/dos_filas_cabecera.csv"), ".csv")
+        self.assertEqual(extension("data/dos_filas_cabecera.txt"), ".txt", "error de formato")
+        self.assertEqual(extension("data/dos_filas_no_cabecera.csv"), ".csv")
+        self.assertEqual(extension("data/no_vacio.txt"), ".txt", "error de formato")
+        self.assertEqual(extension("data/vacio.txt"), ".txt", "error de formato")
+        self.assertEqual(extension("data/unicode21.txt"), ".txt", "error de formato")
+        self.assertEqual(extension("data/vacio.csv"), ".csv")
+        self.assertEqual(extension("data/survey_results_public2020.csv"), ".csv")
+        self.assertEqual(extension("data/survey_results_public2021.csv"), ".csv")
 
 
 
     def test_columnas_no_nulas(self):
-        dos_filas_cabecera_csv = ("data/dos_filas_cabecera.csv")
-        dos_filas_cabecera_txt = ("data/dos_filas_cabecera.txt")
-        dos_filas_no_cabecera_csv = ("data/dos_filas_no_cabecera.csv")
-        df21 = ("data/survey_results_public2021.csv")
-        df20 = ("data/survey_results_public2020.csv")
-        no_vacio_txt = ("data/no_vacio.txt")
-        unicode21_txt = ("data/unicode21.txt")
-        vacio_csv = ("data/vacio.csv")
-        vacio_txt = ("data/vacio.txt")
-
+        
         # columnas que se usan en el dataframe (2021)
         pred21 = ["MainBranch", "Country", "US_State", "EdLevel", "Age", "Employment",
                   "Age1stCode", "LearnCode", "YearsCode", "YearsCodePro", "DevType", "OpSys", "NEWStuck",
@@ -148,24 +98,24 @@ class TestCsv(unittest.TestCase):
         pred20 = ["MainBranch", "Age", "Age1stCode", "ConvertedComp", "Country", "DevType", "EdLevel", "NEWLearn",
                   "NEWStuck", "OpSys", "YearsCode", "YearsCodePro", "LanguageWorkedWith"]
 
-        self.assertFalse(columnas_no_nulas(dos_filas_cabecera_csv,pred21))
-        self.assertFalse(columnas_no_nulas(dos_filas_no_cabecera_csv, pred21))
-        self.assertFalse(columnas_no_nulas(dos_filas_cabecera_txt, pred21))
-        self.assertFalse(columnas_no_nulas(df20, pred21))
-        self.assertFalse(columnas_no_nulas(no_vacio_txt, pred21))
-        self.assertFalse(columnas_no_nulas(unicode21_txt, pred21))
-        self.assertFalse(columnas_no_nulas(vacio_csv, pred21))
-        self.assertFalse(columnas_no_nulas(vacio_txt, pred21))
+        self.assertFalse(columnas_no_nulas("data/dos_filas_cabecera.csv",pred21))
+        self.assertFalse(columnas_no_nulas("data/dos_filas_no_cabecera.csv", pred21))
+        self.assertFalse(columnas_no_nulas("data/dos_filas_cabecera.txt", pred21))
+        self.assertFalse(columnas_no_nulas("data/survey_results_public2020.csv", pred21))
+        self.assertFalse(columnas_no_nulas("data/no_vacio.txt", pred21))
+        self.assertFalse(columnas_no_nulas("data/unicode21.txt", pred21))
+        self.assertFalse(columnas_no_nulas("data/vacio.csv", pred21))
+        self.assertFalse(columnas_no_nulas("data/vacio.txt", pred21))
 
-        self.assertFalse(columnas_no_nulas(dos_filas_cabecera_csv, pred20))
-        self.assertFalse(columnas_no_nulas(dos_filas_no_cabecera_csv, pred20))
-        self.assertFalse(columnas_no_nulas(dos_filas_cabecera_txt, pred20))
-        self.assertFalse(columnas_no_nulas(no_vacio_txt, pred20))
-        self.assertFalse(columnas_no_nulas(unicode21_txt, pred20))
-        self.assertFalse(columnas_no_nulas(vacio_csv, pred20))
-        self.assertFalse(columnas_no_nulas(vacio_txt, pred20))
+        self.assertFalse(columnas_no_nulas("data/dos_filas_cabecera.csv", pred20))
+        self.assertFalse(columnas_no_nulas("data/dos_filas_no_cabecera.csv", pred20))
+        self.assertFalse(columnas_no_nulas("data/dos_filas_cabecera.txt", pred20))
+        self.assertFalse(columnas_no_nulas("data/no_vacio.txt", pred20))
+        self.assertFalse(columnas_no_nulas("data/unicode21.txt", pred20))
+        self.assertFalse(columnas_no_nulas("data/vacio.csv", pred20))
+        self.assertFalse(columnas_no_nulas("data/vacio.txt", pred20))
 
-        self.assertTrue(columnas_no_nulas(df20, pred20))
-        self.assertTrue(columnas_no_nulas(df21, pred21))
+        self.assertTrue(columnas_no_nulas("data/survey_results_public2020.csv", pred20))
+        self.assertTrue(columnas_no_nulas("data/survey_results_public2021.csv", pred21))
 if __name__ == '__main__':
     unittest.main()

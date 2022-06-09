@@ -1,9 +1,10 @@
+# funciones para test
+#Alba Bartolome
 
 
-from charset_normalizer import CharsetNormalizerMatches as CnM
 import pandas as pd
 import os
-
+from charset_normalizer import CharsetNormalizerMatches as CnM
 
 def existe(directorio):
     """
