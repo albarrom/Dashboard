@@ -1,6 +1,4 @@
-# Dashboard de visualización del uso y preferencias de los desarrolladores basado en las encuestas anuales de Stack Overflow  
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c76950ce941e42c783f68748c6d639cf)](https://www.codacy.com/gh/albarrom/GII_O_MA_21.05/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=albarrom/GII_O_MA_21.05&amp;utm_campaign=Badge_Grade)
+# Dashboard de visualización del uso y preferencias de los desarrolladores basado en las encuestas anuales de Stack Overflow  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/c76950ce941e42c783f68748c6d639cf)](https://www.codacy.com/gh/albarrom/GII_O_MA_21.05/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=albarrom/GII_O_MA_21.05&amp;utm_campaign=Badge_Grade)
 
 ## Descripción
 
@@ -10,8 +8,8 @@ Esta aplicación ha sido creada para procesar datos recogidos de las [encuestas 
 
 Todo lo que se necesita para continuar ampliando la aplicación se puede encontrar en [` tfg_stackoverflow.ipynb `](https://github.com/albarrom/GII_O_MA_21.05/blob/main/tfg_stackoverflow.ipynb) o en [` tfg_stackoverflow.py `](https://github.com/albarrom/GII_O_MA_21.05/blob/main/tfg_stackoverflow.py). Ambos contienen la misma información, se puede usar el que mejor se adapte a las necesidades particulares del usuario.
 
-  * Los ficheros con extensión ` *.csv ` que contienen los datos de las encuestas de Stackoverflow están en la carpeta ` data `
-  * También se va a necesitar el fichero ` abbr.py ` para ejecutar uno de los gráficos.
+*    Los ficheros con extensión ` *.csv ` que contienen los datos de las encuestas de Stackoverflow están en la carpeta ` data `  
+*    También se va a necesitar el fichero ` abbr.py ` para ejecutar uno de los gráficos.  
 
 Se puede obtener más información sobre lo que contienen las demás carpetas leyendo el fichero readme que hay en cada una de ellas.
 
@@ -50,7 +48,7 @@ Después basta situarse en el directorio ` pruebas ` y ejecutar
 
 ## Construido con
 
-  * [Plotly Python](https://plotly.com/python/). 
-  * [Dash](https://dash.plotly.com/).
-  * [Heroku](https://www.heroku.com/developers).
-  * [Python](https://www.python.org/downloads/release/python-3100/)
+*    [Plotly Python](https://plotly.com/python/).  
+*    [Dash](https://dash.plotly.com/).  
+*    [Heroku](https://www.heroku.com/developers).  
+*    [Python](https://www.python.org/downloads/release/python-3100/)  
