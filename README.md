@@ -11,24 +11,22 @@ Todo lo que se necesita para continuar ampliando la aplicación se puede encontr
 * Los ficheros con extensión ` *.csv ` que contienen los datos de las encuestas de Stackoverflow están en la carpeta ` data `  
 * También se va a necesitar el fichero ` abbr.py ` para ejecutar uno de los gráficos.  
 
-Se puede obtener más información sobre lo que contienen las demás carpetas leyendo el fichero readme que hay en cada una de ellas.
-
 ## Comenzando
 Para poder poner en funcionamiento una copia del proyecto se van a necesitar:
 
 [Python](https://www.python.org/downloads/windows/) y un IDE a elección (se recomienda [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows)) o [Anaconda](https://www.anaconda.com/).
 
-Si se elige Python se necesitará, además de un IDE, las librerías: pandas, plotly, dash, dash-bootstrap-components y numpy. Para ello se deben ejecutar los siguientes comandos:
+Si se elige Python se necesitará, además de un IDE, las dependencias: pandas, plotly, dash, dash-bootstrap-components y numpy. Para ello se deben ejecutar los siguientes comandos:
 
 	pip install pandas
 	pip install plotly
 	pip install dash
-	pip install dash-bootstap-components
+	pip install dash-bootstrap-components
 	 
-Si va a usarse Anaconda (opción más recomendada), la lista de librerías a instalar es mas reducida. Bastará con:
+Si va a usarse Anaconda (opción más recomendada), la lista de dependencias a instalar es mas reducida. Bastará con:
 
 	pip install dash
-	pip install dash-bootstap-components
+	pip install dash-bootstrap-components
 		
 ## App
 

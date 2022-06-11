@@ -1,4 +1,4 @@
-# Carpeta Old
+# Directorio Old
 
 **Esta carpeta está incluida en gitignore.**
 ## Estructura
