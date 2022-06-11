@@ -5,4 +5,4 @@
 
 * `definitivo` notebooks cuyo código ha sido incluido de alguna forma en el dashboard final.  
 * `versiones` listado dashboards en diferentes procesos de desarrollo. Todos son versiones antiguas.  
-*  En `no definitivo` están el resto. (código que no ha sido incluido en el dashboard final)  
+* En `no definitivo` están el resto. (código que no ha sido incluido en el dashboard final)  

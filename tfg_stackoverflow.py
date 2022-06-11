@@ -66,7 +66,7 @@ def graficosRespuesta(df, col):
            .reset_index()) #resetear indice
 
     # eliminar todos los valores que contengan ciertos strings
-    # ej: Other (please specify), Something else... 
+    # ej: Other (please specify), Something else...
     df2 = df2[~df2[col].str.contains('|'.join(['please', 'not to say', 'else', 't know']))]
 
     # eliminar la info dentro de parentesis
@@ -869,7 +869,7 @@ app.layout = html.Div([
 @app.callback(
     Output(component_id='primero', component_property='figure'),
     Input(component_id='opt1', component_property='value'))
-def update_graph(opt1):
+def graficoDoblesBarras(opt1):
     """
     Genera la figura bajo el titulo Age Vs Years Coding.
     :param opt1: boton que se va a pulsar en el layout (2020/2021) --> Input
@@ -913,7 +913,7 @@ def update_graph(opt1):
 @app.callback(
     Output("stacked2", "children"),
     Input("stacked", "active_tab"))
-def tab_content(active_tab):
+def graficoLoveHate(active_tab):
     """
     Genera la figura bajo el titulo Love Vs Hate Vs Want.
     :param active_tab: tab activa en el layout
@@ -995,7 +995,7 @@ def tab_content(active_tab):
     Output("mapa", "children"),
     Input("tab", "active_tab"))
 
-def tab_content2(active_tab):
+def graficoMapa(active_tab):
     """
     Genera la figura bajo el titulo Key territories
     :param active_tab: tab activa en el layout
@@ -1055,7 +1055,7 @@ def tab_content2(active_tab):
     [Input(component_id='opt4', component_property='value'),
      Input(component_id='hide-show', component_property='n_clicks')])
 
-def update_graph(opt4, n_clicks): # 2 input, 2 param.
+def graficoSalario(opt4, n_clicks): # 2 input, 2 param.
     """
     Genera la figura bajo el titulo Salary and experience by developer type
     :param opt4: boton que se va a pulsar en el layout (2020/2021)
@@ -1100,7 +1100,7 @@ def update_graph(opt4, n_clicks): # 2 input, 2 param.
 @app.callback(
     Output("treemap2", "children"),
     Input("treemap", "active_tab"))
-def treemap(active_tab):  # edad vs tech
+def graficoTreemap(active_tab):  # edad vs tech
     """
     Genera la figura bajo el titulo Current tech use by age
     :param active_tab: tab activa en el layout
@@ -1148,7 +1148,7 @@ def treemap(active_tab):  # edad vs tech
     Output("sankey2", "children"),
     Input("sankey", "active_tab"))
 
-def tab_content(active_tab):
+def graficoSankey(active_tab):
     """
     Genera la figura bajo el titulo Current tech use by Ed level.
     :param active_tab: tab activa en el layout
@@ -1210,7 +1210,7 @@ def tab_content(active_tab):
      Output('hide-show2', 'children')],
     [Input(component_id='opt5', component_property='value'),
      Input(component_id='hide-show2', component_property='n_clicks')])
-def update_graph(opt5, n_clicks):
+def graficoSalarioLen(opt5, n_clicks):
     """
     Genera la figura bajo el titulo Salary and experience by language
     :param opt5: boton que se va a pulsar en el layout (2020/2021)
